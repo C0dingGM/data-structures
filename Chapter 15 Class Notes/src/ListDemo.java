@@ -114,7 +114,7 @@ public class ListDemo
 
               for (String n: staff){
                 if (n.equals("Tony")){
-                    n.add("Bruce");
+                    staff.add("Bruce");
                 }
               }
               System.out.println(staff);
