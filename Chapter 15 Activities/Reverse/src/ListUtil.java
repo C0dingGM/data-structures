@@ -15,18 +15,14 @@ public class ListUtil
     {
         
          ListIterator <String> iterator = strings.listIterator();
-         LinkedList <String> result = new LinkedList<>();
-
+         ListIterator <String> iterator1 = strings.listIterator();
          while (iterator.hasNext()){
-            String n = iterator.next();
-            
+            iterator1.hasNext();
          }
-         for(int i = strings.size()-1; i >= 0; i--){
-            String n = iterator.previous();
-            result.add(n);
-         }
+         for (int i = 0; i < (strings.size()-1)/2; i++){
 
-        System.out.println("My answer:" + result);
+
+         }        
         
     }
 }
