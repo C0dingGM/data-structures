@@ -13,6 +13,28 @@ public class WordAnalysis
     public static void main(String[] args)
         throws FileNotFoundException
     {
+        Set<String> dictionaryWords = readWords("Chapter 15 Class Notes/src/words");
+        Set<String> novelWords = readWords("Chapter 15 Class Notes/src/war-and-peace.txt");
+
+        //Print all the words taht are in the novel but not in the dictionary
+        for (String word : novelWords){
+            if (!dictionaryWords.contains(word)){
+                System.out.println(word);
+            }
+        }
+        //Print off the number of unique words in the novel
+        System.out.println("There are "+novelWords.size() + " unique words in the novel");
+
+
+        //Print words more that 3 letters
+        Iterator<String> iterator = novelWords.iterator();
+        while (iterator.hasNext()){
+            if (iterator.next().length() < 3){
+                iterator.remove();
+            }
+        }
+        System.out.println("There are "+novelWords.size() + " with more than 3 letters");
+
     }
 
     /**
@@ -25,6 +47,24 @@ public class WordAnalysis
     public static Set<String> readWords(String filename)
         throws FileNotFoundException
     {
-        return null;
+        //We use a hashset instead of a tree set because the order doesn't matter
+        Set<String> words = new HashSet<>();
+        
+        
+        //determine the current working directory
+        //System.out.println(System.getProperty("user.dir"));
+
+        Scanner in = new Scanner(new File (filename), "UTF-8");
+
+        // Use amy character that's not a letter and a delimiter
+        in.useDelimiter("[^a-zA-Z]+");
+
+        while (in.hasNext()) {
+            // Add words to the set (duplicate automatically ignored) 
+            words.add(in.next().toLowerCase());
+            
+        }
+
+        return words;
     }
 }
