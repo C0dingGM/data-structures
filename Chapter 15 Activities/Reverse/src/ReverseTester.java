@@ -16,4 +16,6 @@ public class ReverseTester
 
         ListUtil.reverse(employeeNames);
         System.out.println("My answer: " + employeeNames);
-        System.out.println("Expected: [Tom, Romeo, Harry, 
+        System.out.println("Expected: [Tom, Romeo, Harry, Dick]");
+    }
+}

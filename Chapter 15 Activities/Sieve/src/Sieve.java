@@ -12,8 +12,8 @@ public class Sieve
         System.out.println("Compute primes up to which integer?");
         int n = in.nextInt();
         Set<Integer> nums = new HashSet<Integer>();
-        for (int i = 2; i <= i; i++){
-            for (int x = 1; x <=9; x++){
+        for (int i = 2; i <= n; i++){
+            for (int x = 2; x <=9; x++){
                 if (i % x == 0 && i != x){
                     break;
                 }
