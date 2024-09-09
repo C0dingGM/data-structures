@@ -34,10 +34,10 @@ public class SudokuSolver {
         } catch (FileNotFoundException e) {
             System.out.println("Cannot open: " + fileName);
         }
-        
+
         // create the list of sets for each row (this.rows)
         this.rows = new ArrayList<Set<Integer>>();
-        for(int[] row: this.grid)
+        for(int[] row: grid)
         {
             this.rows.add(new HashSet<Integer>());
             for(int i: row)
@@ -116,10 +116,8 @@ public class SudokuSolver {
          */
         Set<Integer> possibleNums = new HashSet<Integer>();
         possibleNums.addAll(this.nums);
-        possibleNums.removeAll(this.cols.get(nextCol));
-        possibleNums.removeAll(this.rows.get(nextRow));
-        possibleNums.removeAll(this.squares.get(nextRow / 3 * 3 + nextCol / 3));
-
+        
+        // ...
 
         // if there are no possible numbers, we cannot solve the board in its current state
         if (possibleNums.isEmpty()) {
@@ -129,10 +127,7 @@ public class SudokuSolver {
         // try each possible number
         for (Integer possibleNum : possibleNums) {
             // update the grid and all three corresponding sets with possibleNum
-            this.grid[nextRow][nextCol] = possibleNum;
-            this.cols.get(nextCol).add(possibleNum);
-            this.rows.get(nextRow).add(possibleNum);
-            this.squares.get(nextRow / 3 * 3 + nextCol / 3).add(possibleNum);
+            // ...
 
             // recursively solve the board
             if (this.solve()) {
@@ -144,10 +139,7 @@ public class SudokuSolver {
                  element in the grid back to 0 and removing possibleNum from all three corresponding
                  sets.
                  */
-                this.grid[nextRow][nextCol] = 0;
-                this.cols.get(nextCol).remove(possibleNum);
-                this.rows.get(nextRow).remove(possibleNum);
-                this.squares.get(nextRow / 3 * 3 + nextCol / 3).remove(possibleNum);
+                // ...
             }
         }
 
@@ -169,7 +161,7 @@ public class SudokuSolver {
     }
 
     public static void main(String[] args) {
-        String fileName = "Chapter 15 Activities/Sudoku/src/puzzle1.txt";
+        String fileName = "src/puzzle1.txt";
 
         SudokuSolver solver = new SudokuSolver(fileName);
         System.out.println(solver);
