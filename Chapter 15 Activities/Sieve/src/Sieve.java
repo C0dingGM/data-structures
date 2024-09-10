@@ -13,12 +13,12 @@ public class Sieve
         int n = in.nextInt();
         Set<Integer> nums = new HashSet<Integer>();
         for (int i = 2; i <= n; i++){
+            nums.add(i);
+        }
+        for (int i = 2; i <= n; i++){
             for (int x = 2; x <=9; x++){
                 if (i % x == 0 && i != x){
-                    break;
-                }
-                if (x == 9){
-                    nums.add(i);
+                    nums.remove(i);
                 }
             }
         }
