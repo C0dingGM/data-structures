@@ -1,5 +1,4 @@
-import java.util.Scanner;
-. . .
+import java.util.*;
 /**
  * A program to add, remove, modify or print
  * student names and grades.
@@ -10,7 +9,7 @@ public class Gradebook
     {
         Scanner in = new Scanner(System.in);
 
-        . . .
+        Map<String, String> gradeBook = new HashMap<>();
 
         boolean done = false;
         while(!done)
@@ -22,17 +21,46 @@ public class Gradebook
                 done = true;
             } else if (input.equals("A"))
             {
-                . . .
+                in.nextLine();
+                System.out.println("Name of student");
+                String name = in.nextLine();
+
+                System.out.println("\nGrade of student");
+                String grade = in.nextLine();
+
+                gradeBook.put(name, grade);
+
+
+
+
 
             } else if (input.equals("R"))
             {
-                . . .
+                in.nextLine();
+                System.out.println("Name of student");
+                String name = in.nextLine();
+                gradeBook.remove(name);
+                
             } else if (input.equals("M"))
             {
-                . . .
+                in.nextLine();
+                System.out.println("Name of student");
+                String name = in.nextLine();
+
+                System.out.println("\nNew Grade of student");
+                String grade = in.nextLine();
+                if (gradeBook.containsKey(name)){
+                    gradeBook.put(name, grade);
+                }
+                else{
+                    System.out.println("\nName not found\n");
+                }
+
             } else if (input.equalsIgnoreCase("P"))
             {
-                . . .
+                for (String name: gradeBook.keySet()){
+                    System.out.println(name + ": " + gradeBook.get(name));
+                }
             } else
             {
                 done = true;
