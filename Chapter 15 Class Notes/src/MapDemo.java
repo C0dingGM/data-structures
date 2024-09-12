@@ -35,7 +35,7 @@ public class MapDemo
          Set<String> keys = favColors.keySet();
 
          for (String key: keys){
-            System.out.println(keys + " (" + key.hashCode()+ "): " + favColors.get(key));
+            System.out.println(key + " (" + key.hashCode()+ "): " + favColors.get(key));
 
          }
 
