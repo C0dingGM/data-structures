@@ -18,7 +18,7 @@ public class FirstLetterMap
         {
 
             // Create your map here
-            ...
+            Map<Integer, ArrayList<String>> wordMap = new HashMap<Integer, ArrayList<String>>();
 
             while (in.hasNext())
             {
@@ -27,7 +27,13 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Use the Java 8 merge method
-                . . .
+                Integer count = wordMap.get(word);
+                if (count == null){
+                    count = 1;
+                }else{
+                    count++;
+                }
+                wordMap.put(word, count);
 
             }
 
