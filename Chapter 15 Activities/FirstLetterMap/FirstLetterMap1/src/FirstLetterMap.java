@@ -12,35 +12,40 @@ public class FirstLetterMap
 {
     public static void main(String[] args)
     {
-        String filename = "src/test1.txt";
+        String filename = "Chapter 15 Activities/FirstLetterMap/FirstLetterMap1/src/test1.txt";
 
         try (Scanner in = new Scanner(new File(filename)))
         {
 
             // Create your map here
             Map<Character, Set<String>> wordMap = new HashMap<Character, Set<String>>();
-            List<String> words = new ArrayList<>();
+            
 
             while (in.hasNext())
             {
                 String word = clean(in.next()).toLowerCase();
                 Character c = word.charAt(0);
-
-                if (wordMap.get(c) == null){
-                    Set<String> start = new HashSet<String>(Arrays.asList(word))l;
-                    wordMap.put(c, );
-                }
-
                 // Update the map here
                 // Use the Java 8 merge method
 
-
+                wordMap.merge(c, new HashSet<>(Arrays.asList(word)), (v1, v2) -> {
+                    v1.addAll(v2);  
+                    return v1;          
+                });
                 
-                wordMap.merge(c, word, (v1, v2)->wordMap.get(v1).add(v2));
-            }
+               
+            
+        }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
+            for (Character key: wordMap.keySet()){
+                List<String> words = new ArrayList<>(wordMap.get(key));
+                Collections.sort(words);
+                System.out.println (key + ": " + words );
+    
+             }
+            
             
         } catch (FileNotFoundException e)
         {
