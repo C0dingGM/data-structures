@@ -10,6 +10,7 @@ public class StackDemo
     public static void main(String[] args)
     {
         Stack<String> commands = new Stack<>();
+        Stack<Integer> number = new Stack<>();
 
         //Push a bunch of commands onto a stack
         commands.push("Insert : 'Hello'");
@@ -25,6 +26,14 @@ public class StackDemo
 
         for (int i = 0; i < 4; i++){
             System.out.println("Undo" + commands.pop());
+        }
+
+        for (int i = 0; i < 10; i++){
+            number.add(i);
+            System.out.println(number);
+        }
+        while (number.size() > 0){
+            System.out.println("Printing: " + number.pop());
         }
     }
 }

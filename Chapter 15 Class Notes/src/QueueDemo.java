@@ -11,6 +11,8 @@ public class QueueDemo
     {
         // Create a print queue of strings (using a linked list)
         Queue<String> jobs = new LinkedList<>();
+        Queue<Integer> number = new LinkedList<>();
+
 
         //Add some jobs
 
@@ -33,6 +35,15 @@ public class QueueDemo
         while (jobs.size() > 0){
             System.out.println("Printing: " + jobs.remove());
         }
+
+        for (int i = 0; i < 10; i++){
+            number.add(i);
+            System.out.println(number);
+        }
+        while (number.size() > 0){
+            System.out.println("Printing: " + number.remove());
+        }
+
         
 
 
