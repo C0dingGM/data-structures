@@ -71,4 +71,38 @@ public class ToDoList
             
             tasks.add(new Task(prio, optionStr));
         }
-        catch(Exception e)
+        catch(Exception e){
+            System.out.println("Not valid input");
+        }
+        
+
+            
+            
+    }
+
+    /**
+     * Get the next highest priority task and
+     * display the description to the user.
+    */
+    public void nextTask()
+    {
+        Task next = null;
+        
+        // Complete this method
+        try {
+            next = tasks.remove();
+        }catch(Exception e){
+            next = null;
+        }
+      
+        
+        
+        if (next == null)
+        {
+            System.out.println("There are no tasks in the list.");
+        } else
+        {
+            System.out.println(next.getDescription());
+        }
+    }
+}

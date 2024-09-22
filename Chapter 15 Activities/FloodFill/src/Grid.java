@@ -20,4 +20,52 @@ public class Grid
             int row = cord.row;
             int col = cord.col;
 
-            if (row >
+            if (row >= 0 && row < 10 && col >= 0 && col < 10 && pixels[row][col] == 0){
+                pixels[row][col] = fillnum++;
+
+                
+                
+                
+                cords.push(new Pair(row-1, col));
+                cords.push(new Pair(row, col+1));
+                cords.push(new Pair(row+1, col));
+                cords.push(new Pair(row, col-1));
+                 
+                
+                
+                
+                
+
+            } 
+            num++;
+            /*
+             for (int i = 0; i < pixels.length; i++){
+                for (int x = 0; x < pixels.length; x ++){
+                    System.out.print(pixels[i][x]+ " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+            
+
+        }
+             */
+            
+        
+        }
+       
+    }
+
+    @Override
+    public String toString()
+    {
+        String r = "";
+        for (int i = 0; i < SIZE; i++)
+        {
+            for (int j = 0; j < SIZE; j++)
+                r = r + String.format("%4d", pixels[i][j]);
+            r = r + "\n";
+        }
+        return r;
+    }
+}
