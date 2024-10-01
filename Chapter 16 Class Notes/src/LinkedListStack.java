@@ -20,10 +20,14 @@ public class LinkedListStack
      *
      * @param element the element to add
     */
-
-
-
-
+    public void push(Object element){
+        //Always push element to the front of linked list
+        Node newNode = new Node();
+        newNode.data = element;
+        newNode.next = this.first;
+        this.first = newNode;
+    }
+   
 
 
     /**
@@ -31,19 +35,28 @@ public class LinkedListStack
         @return the removed element
     */
 
+    public Object pop(){
+        if (isEmpty()){
+            throw new NoSuchElementException();  
+        }
 
+        Object element = this.first.data;
+        this.first = this.first.next;
+        return element;
+        
+        
+    }
 
-
-
-
-
-
+    
     /**
      * Checks whether this stack is empty.
      *
      * @return true if the stack is empty
     */
 
+    public boolean isEmpty(){
+        return this.first == null;
+    }
 
     static class Node
     {
