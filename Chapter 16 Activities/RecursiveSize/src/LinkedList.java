@@ -34,9 +34,9 @@ public class LinkedList {
         if (node == null) {
             return count;
         } else {
-            // count++;
-            System.out.println("erro");
-            return size(count++, node.next);
+            count++;
+
+            return size(count, node.next);
         }
     }
 
