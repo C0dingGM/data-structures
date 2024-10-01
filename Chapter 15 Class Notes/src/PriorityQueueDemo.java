@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
@@ -13,6 +14,7 @@ public class PriorityQueueDemo
         //Create a to do list
         // The WorkOrder class has a priority and description
         Queue<WorkOrder> toDo = new PriorityQueue<>();
+        Queue<WorkOrder> toDo1 = new LinkedList<>();
 
         toDo.add(new WorkOrder(3, " Water plants"));
         toDo.add(new WorkOrder(2, " Make Dinner"));
