@@ -24,20 +24,14 @@ public class LinkedList {
      * @return the number of elements in the list
      */
     public int size() {
-        if (first == null) {
-            return 0;
-        }
-        return size(0, first);
+        return size(first);
     }
 
-    public int size(int count, Node node) {
-        if (node == null) {
-            return count;
-        } else {
-            count++;
-
-            return size(count, node.next);
+    private static int size(Node start) {
+        if (start == null) {
+            return 0;
         }
+        return 1 + size(start.next);
     }
 
     /**
