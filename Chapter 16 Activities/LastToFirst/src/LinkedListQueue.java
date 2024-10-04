@@ -22,10 +22,10 @@ public class LinkedListQueue
     */
     public void lastToFirst()
     {
-        . . .
-
-
-
+        tail.next = head;
+        tail = tail.next;
+        head = head.next;
+        tail.next = null;
 
 
     }
