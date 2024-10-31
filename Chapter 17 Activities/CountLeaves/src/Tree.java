@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 /**
     A tree in which each node has an arbitrary number of children.
     Modify the Tree class from Section 16.1 (below) to add
@@ -23,6 +23,16 @@ public class Tree
             int sum = 0;
             for (Node child : children) { sum = sum + child.size(); }
             return 1 + sum;
+        }
+
+        public int leafCount()
+        {
+            if (this.children.isEmpty())
+                return 1;
+            int leaves = 0;
+            for (Node c : this.children)
+                leaves += c.leafCount();
+            return leaves;
         }
     }
 
@@ -64,4 +74,8 @@ public class Tree
     }
 
     // Additional methods will be added in later sections.
+    public int leafCount()
+    {
+        return this.root.leafCount();
+    }
 }
