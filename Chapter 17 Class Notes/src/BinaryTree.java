@@ -81,39 +81,4 @@ public class BinaryTree
     */
     public boolean isEmpty()
     {
-         return this.root == null;
-    }
-
-    /**
-        Gets the data at the root of this tree.
-        @return the root data
-    */
-    public Object data()
-    {
-         return this.root.data;
-    }
-    
-    /**
-        Gets the left subtree of this tree.
-        @return the left child of the root
-    */
-    public BinaryTree left() 
-    { 
-        BinaryTree subtree = new BinaryTree();
-        subtree.root = this.root.left;
-        return subtree;
-        // return this.root.left because root.left is a node
-    }
-
-    /**
-        Gets the right subtree of this tree.
-        @return the right child of the root
-    */
-    public BinaryTree right() 
-    { 
-        BinaryTree subtree = new BinaryTree();
-        subtree.root = this.root.right;
-        return subtree;
-        
-    }
-}
+         return this.root
