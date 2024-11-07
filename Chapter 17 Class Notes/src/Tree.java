@@ -92,4 +92,25 @@ public class Tree {
             Tree.preorder(child, v);
         }
     }
+
+    public void depthFirst() {
+        depthFirst(root);
+    }
+
+    public void depthFirst(Node current) {
+        System.out.println(current.data);
+        if (current.children.size() == 0) {
+
+            return;
+        }
+
+        for (Node child : current.children) {
+
+            depthFirst(child);
+        }
+
+        return;
+
+    }
+
 }

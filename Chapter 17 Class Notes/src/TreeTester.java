@@ -1,10 +1,8 @@
 /**
-   This program tests the binary search tree class.
-*/
-public class TreeTester
-{ 
-   public static void main(String[] args)
-   {  
+ * This program tests the binary search tree class.
+ */
+public class TreeTester {
+   public static void main(String[] args) {
       BinarySearchTree t = new BinarySearchTree();
       t.add("D");
       t.add("B");
@@ -22,6 +20,6 @@ public class TreeTester
       t.remove("D"); // Removing root
       t.print();
       System.out.println("Expected: C E G H I J");
+
    }
 }
-
