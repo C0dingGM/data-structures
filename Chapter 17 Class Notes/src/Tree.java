@@ -93,6 +93,24 @@ public class Tree {
         }
     }
 
+    public void postorder(Visitor V) {
+        Tree.preorder(this.root, V);
+    }
+
+    private static void postorder(Node n, Visitor v) {
+        if (n.children.size() == 0) {
+            System.out.println(n.data);
+            return;
+        }
+        v.visit(n.data);
+
+        for (Node child : n.children) {
+            Tree.preorder(child, v);
+        }
+        System.out.println(n.data);
+        return;
+    }
+
     public void depthFirst() {
         depthFirst(root);
     }
